@@ -7,7 +7,7 @@ class Categoria(models.Model):
 class Filme(models.Model):
     titulo = models.CharField(max_length=(150))
     valor = models.FloatField()
-    categoria = models.OneToOneField(Categoria,on_delete=models.CASCADE)
+    categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE)
 
 class Cliente(models.Model):
     nome = models.CharField(max_length=(100))
@@ -16,5 +16,6 @@ class Cliente(models.Model):
 class Locacao(models.Model):
     nome = models.CharField(max_length=(100))
     data = models.DateField() 
-    cliente = models.OneToOneField(Cliente,on_delete=models.CASCADE)
+    cliente = models.ForeignKey(Cliente,on_delete=models.CASCADE)
+    filme = models.ManyToManyField(Filme)
 
