@@ -8,7 +8,8 @@
 </head>
 <body>
     {% for context in context %}
-    <P>{{context(0)}}</P>
-    {% endfor %}
+    <p><a href="/context/{{context.id}}">{{context.nome}}</a></p> 
+    <p>a</p>
+    {% endfor %} 
 </body>
 </html>
