@@ -7,9 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    {% for context in context %}
-    <p><a href="/context/{{context.id}}">{{context.nome}}</a></p> 
-    <p>a</p>
-    {% endfor %} 
+    {% for i in locacoes %}
+        <ul>
+            <li>{{ i.nome }}</li>
+            <li>{{ i.data }}</li>
+            <li>{{i.cliente}}</li>
+            <li>{{i.filme}}</li>
+        </ul>
+    {% endfor %}
 </body>
 </html>

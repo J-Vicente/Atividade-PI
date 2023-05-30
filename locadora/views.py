@@ -8,10 +8,11 @@ def index(request):
     return render(request,"index.html")
 
 def locacao(request):
-    context = Locacao.objects.all()
-    # context = {'nome': Locacao.nome, 'data':Locacao.data, 'cliente':Locacao.cliente, 'filme':Locacao.filme}
+    locacoes = Locacao.objects.all()
+    context = {'locacoes': locacoes}
     return render(request,"locacao.html",context)
 
 def filmes(request):
-    context = {'nome': Filme.titulo, 'valor': Filme.valor, 'categoria': Filme.categoria}
+    filmes = Filme.objects.all()
+    context = {'filmes':filmes}
     return render(request,"filmes.html",context)

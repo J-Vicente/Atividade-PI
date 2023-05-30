@@ -7,6 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    
+    {% for i in filmes %}
+        <ul>
+            <li>{{ i.titulo }}</li>
+            <li>{{ i.valor }}</li>
+            <li>{{i.categoria}}</li>
+        </ul>
+    {% endfor %}
 </body>
 </html>
